@@ -7,7 +7,7 @@ I'm still refine this page and I will add more assignments here.
 ### Code Repository
 
 All of the code shown here is for CS460 and is hosted in the following repositories:
-https://github.com/KexinPan/CS460
+(https://github.com/KexinPan/CS460)
 
 ### Software Engineering I (CS 460): Homework
 
