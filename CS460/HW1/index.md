@@ -8,7 +8,7 @@ I have never used Git before, so the class start, I need to find information fro
 
 * [Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW1.html)
 * [Code Repository](https://github.com/KexinPan/CS460)
-* [Final Page](https://github.com/KexinPan/CS460/blob/master/HW1/index.html)
+* [Final Page](https://kexinpan.github.io/CS460/HW1/sample)
 * https://github.com/KexinPan/CS460.git
 
 ### For Git
