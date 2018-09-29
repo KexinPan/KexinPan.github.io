@@ -11,4 +11,4 @@ All of the code in the CS460 class is in the following respository:
 
 ### Software Engineering I: Homework
 
-1.[HW1](CS460/HW1):HTML, CSS, Git and Bootstrap.
+1.[HW1](KexinPan.github.io/CS460/HW1):HTML, CSS, Git and Bootstrap.
