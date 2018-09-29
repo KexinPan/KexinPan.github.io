@@ -6,10 +6,10 @@ I have never used Git before, so the class start, I need to find information fro
 
 ## Links
 
-*.[Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW1.html)
-*.[Code Repository](https://github.com/KexinPan/CS460)
-*.[Final Page](https://github.com/KexinPan/CS460/blob/master/HW1/index.html)
-*.[https://github.com/KexinPan/CS460.git](https://github.com/KexinPan/CS460.git)
+* [Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW1.html)
+* [Code Repository](https://github.com/KexinPan/CS460)
+* [Final Page](https://github.com/KexinPan/CS460/blob/master/HW1/index.html)
+* [https://github.com/KexinPan/CS460.git](https://github.com/KexinPan/CS460.git)
 
 ### For Git
 
