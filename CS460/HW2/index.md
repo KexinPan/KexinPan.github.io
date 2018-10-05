@@ -34,36 +34,29 @@ git merge hw2
 
 ### Think of a project and design it
 
-I'm not familiar with HTML, so I moved slow and I searched online to get help. I set up a simple website to finish the requirement of assignment. I have three pages on my website. The basic structure looks like:
+The first part of my application design is to create a wireframe as the basic layout of my application and will guide my development. I decide to design a BMI calculator, the layout will not be complex because I think it's useful.
 
-```
-<html>
-    <head></head>
-    <body>
-    <ul>
-        <li>...</li>
-        ...
-    </ul>
-    <div class="container-fluid">
-        <div id="left" class="left">
-        ...
-        </div>
-        <div id="left" class="right">
-        ...
-        </div>
-    </div>
-    </body>
-```
+I used the [Pencil Project](http://pencil.evolus.vn/) application for my design. This tool is easy to use and it's free.
+
+Here are my wireframes:
+
+#### Basic layout
+
+![wireframe-normal](img/wireframe-normal.jpg)
+
+#### Input Error
+
+![inputError](img/inputError.jpg)
+
+#### Submmit Error
+
+![alert](img/alert.jpg)
+
+### Step 4: Creating the Working Page
 
 
-I read the documentation and add the bootstrap link on the head of my html file to use it.
-```
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-```
-I have my own css file to style my webpage, most times I picked some soft color to make it seems bright and maybe more comfortable.
+
+
 
 
 
