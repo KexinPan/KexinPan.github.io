@@ -12,7 +12,7 @@ All of the code in the CS460 class is in the following respository:
 ### Software Engineering I: Homework
 
 1.[HW1](CS460/HW1/):HTML, CSS, Git and Bootstrap.
-2.[HW2](CS460/HW2/README.md):HTML,Javascript,jQuery.
+2.[HW2](CS460/HW2/README.md/):HTML,Javascript,jQuery.
 
 
 
