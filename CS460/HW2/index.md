@@ -10,7 +10,7 @@ The second honework is use javascript and jquery in the html so we can write a w
 * [Final Page](https://github.com/KexinPan/KexinPan.github.io/tree/master/CS460/HW2/sample)
 * https://github.com/KexinPan/CS460.git
 
-### Create a branch for homework2
+### Setup the environment
 
 The homework requires a new branch to do it. I created two branches because the first time when I finished the assignment, I found I push it to a wrong folder, so I create a branch and did it again.
 
@@ -27,11 +27,12 @@ touch index.html
 touch css.html
 git add .
 git commit -m "completed code"
+git push origin hw2
 git checkout master
 git merge hw2
 ```
 
-### For HTML,CSS,BOOTSTRAP
+### Think of a project and design it
 
 I'm not familiar with HTML, so I moved slow and I searched online to get help. I set up a simple website to finish the requirement of assignment. I have three pages on my website. The basic structure looks like:
 
