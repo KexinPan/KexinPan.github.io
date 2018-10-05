@@ -7,7 +7,7 @@ The second honework is use javascript and jquery in the html so we can write a w
 
 * [Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW2.html)
 * [Code Repository](https://github.com/KexinPan/CS460)
-* [Final Page](https://github.com/KexinPan/KexinPan.github.io/tree/master/CS460/HW2/sample)
+* [Final Page](https://kexinpan.github.io/CS460/HW2/sample)
 * https://github.com/KexinPan/CS460.git
 
 ### Setup the environment
