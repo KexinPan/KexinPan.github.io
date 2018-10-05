@@ -1,29 +1,36 @@
-## Homework 1
+## Homework 2
 
-For the first assignment, we got the task of creating a series of simple web pages and styling them using CSS and Bootstrap. I have studied HTML during summer vacation, but I know nothing about bootstrap and css, so I must start early before class.
+The second honework is use javascript and jquery in the html so we can write a webpage while with css and bootstrap for the format. The assignment aslo require create a new branch to do it. 
 
-I have never used Git before, so the class start, I need to find information from the Internet to preview what git is. On the first day, I was anxious because I was afraid that I couldn’t follow the class, but I feel a little easier when I knew what git was and how to use it.
 
 ## Links
 
-* [Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW1.html)
+* [Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW2.html)
 * [Code Repository](https://github.com/KexinPan/CS460)
-* [Final Page](https://kexinpan.github.io/CS460/HW1/sample)
+* [Final Page](https://github.com/KexinPan/KexinPan.github.io/tree/master/CS460/HW2/sample)
 * https://github.com/KexinPan/CS460.git
 
-### For Git
+### Create a branch for homework2
 
-I download git online and try some simple command first. I create a folder to store all the files when I learn Git. In this folder, I create first file called README.md. I initialize git and set up my username and account, then I try to add and commit this file and push it to the remote repository.
+The homework requires a new branch to do it. I created two branches because the first time when I finished the assignment, I found I push it to a wrong folder, so I create a branch and did it again.
+
+Here are some code when I create the new branch.
 
 ```
-mkdir LearnGit
-cd LearnGit
-git add index.HTML
-git status
-git commit -m "a commit message here"
-git status
-git push origin master
+git branch hw2
+git checkout hw2
 ```
+Then I create new files on this branch. When I complete the code, I switch to the master branch, then merge the hw2 branch.
+
+```
+touch index.html
+touch css.html
+git add .
+git commit -m "completed code"
+git checkout master
+git merge hw2
+```
+
 ### For HTML,CSS,BOOTSTRAP
 
 I'm not familiar with HTML, so I moved slow and I searched online to get help. I set up a simple website to finish the requirement of assignment. I have three pages on my website. The basic structure looks like:
