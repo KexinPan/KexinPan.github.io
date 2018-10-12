@@ -66,12 +66,15 @@ public QueueUnderflowException(string message) : base(message)
 After debugging several times, the code works:
 
 When run without input numbers:
+
 ![RunWithoutNumber](Code/RunWithoutNumber.jpg)
 
 When run with input some characters:
+
 ![RunWithCharacter](Code/RunWithCharacter.jpg)
 
 When run with correct number:
+
 ![RunSuccess](Code/RunSuccess.jpg)
 
 
