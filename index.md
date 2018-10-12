@@ -13,6 +13,7 @@ All of the code in the CS460 class is in the following respository:
 
 1.[HW1](CS460/HW1/):HTML, CSS, Git and Bootstrap.
 2.[HW2](CS460/HW2/):HTML,Javascript,jQuery.
+3.[HW3](CS460/HW3/):C# console, translate app.
 
 
 
