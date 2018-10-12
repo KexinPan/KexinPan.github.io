@@ -65,7 +65,14 @@ public QueueUnderflowException(string message) : base(message)
 
 After debugging several times, the code works:
 
+When run without input numbers:
+(/Code/RunWithoutNumber.jpg)
 
+When run with input some characters:
+(/Code/RunWithCharacter.jpg)
+
+When run with correct number:
+(/Code/RunSuccess)
 
 
 
