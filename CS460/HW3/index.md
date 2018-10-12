@@ -8,7 +8,7 @@ From this project, I found java and C# are similar, there are some different syn
 ## Links
 
 * [Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW3.html)
-* [Code Repository](https://github.com/KexinPan/CS460/HW3)
+* [Code Repository](https://github.com/KexinPan/CS460/tree/master/HW3)
 * https://github.com/KexinPan/CS460.git
 
 ### Enviroment Setup
