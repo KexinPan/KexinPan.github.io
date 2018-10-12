@@ -7,8 +7,10 @@ using System.Threading.Tasks;
 namespace HW3
 {
 
-  
-        class Node<T>
+    /// <summary>
+    /// Singly linked node class.
+    /// </summary>
+    class Node<T>
         {
             public T data;
             public Node<T> next;
