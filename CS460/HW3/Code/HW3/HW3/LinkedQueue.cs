@@ -6,74 +6,74 @@ using System.Threading.Tasks;
 
 namespace HW3
 {
-        class LinkedQueue<T> : IQueueInterface<T>
+    class LinkedQueue<T> : IQueueInterface<T>
+    {
+        private Node<T> front;
+        private Node<T> rear;
+
+        public LinkedQueue()
         {
-            private Node<T> front;
-            private Node<T> rear;
 
-            public LinkedQueue()
+            front = null;
+            rear = null;
+        }
+
+        public T push(T element)
+        {
+            if (element == null)
             {
+                throw new NullReferenceException();
+            }
+            if (isEmpty())
+            {
+                Node<T> tmp = new Node<T>(element, null);
 
+                front = rear = tmp;
+
+            }
+            else
+            {
+                Node<T> tmp = new Node<T>(element, null);
+                tmp.data = element;
+                rear.next = tmp;
+                rear = tmp;
+
+            }
+
+            return element;
+        }
+
+        public T pop()
+        {
+            T tmp;
+            if (isEmpty())
+            {
+                throw new QueueUnderflowException("The queue was empty when pop was invoked.");
+            }
+            else if (front == rear)
+            {
+                tmp = front.data;
                 front = null;
                 rear = null;
             }
-
-            public T push(T element)
+            else
             {
-                if (element == null)
-                {
-                    throw new NullReferenceException();
-                }
-                if (isEmpty())
-                {
-                    Node<T> tmp = new Node<T>(element, null);
-
-                    front = rear = tmp;
-
-                }
-                else
-                {
-                    Node<T> tmp = new Node<T>(element, null);
-                    tmp.data = element;
-                    rear.next = tmp;
-                    rear = tmp;
-
-                }
-
-                return element;
+                tmp = front.data;
+                front = front.next;
             }
+            return tmp;
+        }
 
-            public T pop()
+        public Boolean isEmpty()
+        {
+
+            if (front == null & rear == null)
             {
-                T tmp;
-                if (isEmpty())
-                {
-                    throw new QueueUnderflowException("The queue was empty when pop was invoked.");
-                }
-                else if (front == rear)
-                {
-                    tmp = front.data;
-                    front = null;
-                    rear = null;
-                }               
-                else
-                {
-                    tmp = front.data;
-                    front = front.next;
-                }
-                return tmp;
+                return true;
             }
+            else
+                return false;
 
-            public Boolean isEmpty()
-            {
-
-                if (front == null & rear == null)
-                {
-                    return true;
-                }
-                else
-                    return false;
-
-            }
-        
+        }
+    }
 }
