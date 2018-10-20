@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>CS 460 Homework 4</h1>
+    <p class="lead">a few forms and some simple sever-side logic--learning the basics of GET, POST, query string, form data and habdling it all from an ASP.NET MVC 5 application.</p>
+    <p><a href="/Home/Index" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4" , style="width:500px">
+        <h2>Miles to Metric Convert</h2>
+        <p>
+            Want to know how many milemeters there are in 26 miles? This calculator
+            is for you. Using query strings to send form data to the server, which performs the calculation
+            and returns the answer in the requested page.
+        </p>
+        <p><a class="btn btn-default" href="/Home/Mileconvert">Try it out &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Color Chooser</h2>
+        <p>Typical online color choosers are way too useful. We wanted something fun and completely useless. This form POST's the data to the server.</p>
+        <p><a class="btn btn-default" href="/Color/ColorMixer">Check it out &raquo;</a></p>
+    </div>
+</div>
