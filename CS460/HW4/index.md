@@ -7,127 +7,107 @@ From this project, I found java and C# are similar, there are some different syn
 
 ## Links
 
-* [Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW3.html)
-* [Code Repository](https://github.com/KexinPan/CS460/tree/master/HW3)
+* [Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW4.html)
+* [Code Repository](https://github.com/KexinPan/CS460/tree/master/HW4)
 * https://github.com/KexinPan/CS460.git
 
 ### Enviroment Setup
 
-#### Setting Up Visual Studio
+#### Setting Up MVC Project
 
-I installed Visual Studio 2017 and choose Cosole App use .net framework. I struggled for how to add different class under one project, I thought it would has a package like java, I searched online and found the classes under namespace were like in one package.
+This is the first time I create .net project, I followed the instruction on class and it becomes pretty easier than I struggled by myself.
 
-The first time I'm afraid that I will do something wrong and hard to fix it, so I use another folder to create my project instead of create it first to push to my repository.
+For the .gitignore file I used the last time in the homework 3, but there are still a lot of files and they seem necessary for this project. So I leave them and push to the remote.
 
 #### Coding
 
-Java and C# are similar, there are some differences on syntax and variables.
+The mileConvert is easy when I figured out the relationship between Controller and View, it's super smart by match the name to find the action and return corresponding ViewPage.
 
-The structure of C# look like:
+I added an action called MileConvert in HomeController and add a view for it.
+
+I don't think I should put the complet code in the portfolio, so I select some code and paste here.
+
+The C# Code for this action look like:
 
 ```
-namespace HW3
-{
-    class Class1
-    {
-        fuction()
+ [HttpGet]
+        public ActionResult MileConvert()
         {
-
-        }
-    }
-}
-
-```
-I tooke down some differences between java and C# in this project on my note:
-```
-java: length();  equivelent in C#: string.Length;
-string to int: int i; i=System.Convert.ToInt32(string);
-java: NullPointerException equivelent in C#: NullReferenceException
-java: RuntimeException equivelent in C#: SystemException
-java: LinkedList.add() equivelent in C#: LinkedList.AddLast();
-java: super() equivelent in C#: base();
-
-```
-The most difficult part for me is the super() in java convert to base() in C#, I just replaced the word first, but it didn't work, after class, I know I shoudl use another structure to use it:
-```
-public QueueUnderflowException() : base()
-{
-
- }
-
-public QueueUnderflowException(string message) : base(message)
-{
-}
-```
-
-The complete code in Program.cs looks like:
-
-```
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-namespace Main
-{
-
-    class Program
-    {
-        static LinkedList<string> generateBinaryRepresentationList(int n){
-            LinkedQueue<StringBuilder> q =new LinkedQueue<StringBuilder>();
-            LinkedList<String> output =new LinkedList<String>();
-            if(n<1){
-                return output;
-            }
-            q.push(new StringBuilder("1"));
-
-            while(n-- >0){
-                StringBuilder sb=q.pop();
-                output.AddLast(sb.ToString());
-                StringBuilder sbc =new StringBuilder(sb.ToString());
-                sb.Append('0');
-                q.push(sb);
-                sbc.Append('1');
-                q.push(sbc);
-
-            }
-            return output;
-        }
-        static void Main(string[] args)
-        {
-            int n;
-            if(args.Length < 1)
-        {
-            Console.WriteLine("Please invoke with the max value to print binary up to, like this:");
-            Console.WriteLine("\tMain.exe 12");
-            return;
-        }
-        try 
-        {  
-            n = System.Convert.ToInt32(args[0]);
-        } 
-        catch (FormatException e) 
-        {
-           Console.WriteLine("I'm sorry, I can't understand the number: " + args[0]);
-            return;
-        }
-        LinkedList<String> output = generateBinaryRepresentationList(n);
-        int maxLength = output.Last.Value.Length;
-        foreach(String s in output)
-        {
-            for(int i = 0; i < maxLength - s.Length; ++i)
+            /// get the value of miles in user input
+            string mileValue = Request.QueryString["miles"];
+            /// get the type of unit that usee choose
+            string unit = Request.QueryString["unit"];
+            /// set the result as a double value
+            double value = Convert.ToDouble(mileValue);
+            if (mileValue != null)
             {
-                Console.Write(" ");
+                string message = "non";
+                if (unit.Equals("millimeters"))
+                {
+                    message = value + " miles is equal to " + value * 1609344 + " millimeters";
+                }
+                if (unit.Equals("centimeters"))
+                {
+                    message = value + " miles is equal to " + value * 160934.4 + " centimeters";
+            ......
+            ......
+                }
+                ViewBag.message = message;
             }
-            Console.WriteLine(s);
-        }
-           
-        }
-    }
-}
+
+```
+I have to say the ViewBag is convenient, it can pass many kinds of data from Controller to the View.
+And in the cshtml file, I can display the result by the use of Razor Code:
+```
+ @if (ViewBag.message != null)
+   {
+      <p>@ViewBag.message</p>
+   }
+```
+For the ColorMixer, it's a little bit harder bacause I am not very clear for how to POST data in webpage. I falied when I have a webpage and try to produce some data by click button, then the professor told me I need two methods for this page. One is HttpGte, to get the webpage format befor I submmit any value. Another is HttpPost, to show the result in the page.
+
+The structure of ColorMixer look like:
+
+```
+[HttpGet]
+public ActionResult ColorMixer(string firstColor, string secondColor)
+ {
+     return View();
+ }
+ 
+  [HttpPost]
+ public ActionResult ColorMixerPost(string firstColor, string secondColor)
+ {
+    Color _firstColor = ColorTranslator.FromHtml(firstColor);
+    ......
+    ViewBag.thirdItem = thirdColor;
+
+    return View("ColorMixer");
+ }
 ```
 
-#### Test
+The most difficult part for me is how to display the color as block, I add some html code <div> in the ViewPage and set the background use the ViewBage data.
+
+```
+ @Html.Label("Second Color")
+    <br>
+ @Html.TextBox("secondColor", null, htmlAttributes: new { placeholder = "#12HHFF", pattern = "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$" })
+    <div style="padding-top:2em">
+        @Html.TextBox("mixcolor", "Mix Color", htmlAttributes: new { type = "Submit" })
+    </div>
+    <div style="padding-top:2em">
+        <div class="colorFItem" , style="background-color: @ViewBag.firstItem"></div>
+        <div class="colorPItem">@ViewBag.plusItem</div>
+        <div class="colorSItem" , style="background-color: @ViewBag.secondItem"></div>
+        <div class="colorPItem">@ViewBag.equalItem</div>
+        <div class="colorTItem" , style="background-color: @ViewBag.thirdItem"></div>
+    </div>
+```
+
+#### Merge Branch
+
+As the requirement, I complete the code of MileConvert in hw4-convert branch and complete the ColoeMixer code in another branch, then merge them to master.
+
 
 After debugging several times, the code works:
 
