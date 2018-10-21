@@ -24,7 +24,7 @@ The mileConvert is easy when I figured out the relationship between Controller a
 
 I added an action called MileConvert in HomeController and add a view for it.
 
-I don't think I should put the complete code in the portfolio, so I select some code and paste here. And for the code, please read the code in the [Code Repository](https://github.com/KexinPan/CS460/tree/master/HW4), it follows every step, including branch and merge. Please grade the code in the github.io folder, I just copied and paste the code to github.io without branch and merge. 
+I don't think I should put the complete code in the portfolio, so I select some code and paste here. And for the code, please read the code in the [Code Repository](https://github.com/KexinPan/CS460/tree/master/HW4), it follows every step, including branch and merge. Please don't grade the code in the github.io folder, I just copied and paste the code to github.io without branch and merge. 
 
 The C# Code for MileConvert action look like:
 
