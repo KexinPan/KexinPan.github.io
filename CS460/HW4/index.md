@@ -7,7 +7,7 @@ We also need to create new two different branch to develop our project, so we ca
 
 ## Links
 
-* [Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW4.html)
+* [Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW4_1819.html)
 * [Code Repository](https://github.com/KexinPan/CS460/tree/master/HW4)
 * https://github.com/KexinPan/CS460.git
 
