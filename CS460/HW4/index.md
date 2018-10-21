@@ -12,13 +12,13 @@ We also need to create new two different branch to develop our project, so we ca
 * https://github.com/KexinPan/CS460.git
 
 
-#### Setting Up MVC Project
+### Setting Up MVC Project
 
 This is the first time I create .net project, I followed the instruction on class and it becomes pretty easier than I struggled by myself.
 
 For the .gitignore file I used the last time in the homework 3, but there are still a lot of files and they seem necessary for this project. So I leave them and push to the remote.
 
-#### Coding
+### Coding
 
 The mileConvert is easy when I figured out the relationship between Controller and View, it's super smart by match the name to find the action and return corresponding ViewPage.
 
@@ -125,11 +125,11 @@ The most difficult part for me is how to display the color as block, I add some 
     </div>
 ```
 
-#### Merge Branch
+### Merge Branch
 
 As the requirement, I complete the code of MileConvert in hw4-convert branch and complete the ColoeMixer code in another branch, then merge them to master.
 
-#### Test
+### Test
 
 After debugging several times, the code works well and the effect looks like the video shows:
 
