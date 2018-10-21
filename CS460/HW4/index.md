@@ -1,8 +1,8 @@
-## Homework 3
+## Homework 4
 
-For this task, we're going to complete the task of creating a C# implementation of a previously written Java application. The goal of this project is to write the sample C# application to demonstrate the knowledge of the C# language and development tools.
+For this task, we're going to create a MVC project by using asp.net, the project in the video seems interesting. There are different requirements for mile convert and color mixer, the first one need GET method and the second one requires POST method, so we can practice the difference between GET and POST method. 
 
-From this project, I found java and C# are similar, there are some different syntax and you need to replace the common variable to another.
+We also need to create new two different branch to develop our project, so we can learn how to deal with the conflicts when we merge.
 
 
 ## Links
@@ -11,7 +11,6 @@ From this project, I found java and C# are similar, there are some different syn
 * [Code Repository](https://github.com/KexinPan/CS460/tree/master/HW4)
 * https://github.com/KexinPan/CS460.git
 
-### Enviroment Setup
 
 #### Setting Up MVC Project
 
@@ -25,7 +24,7 @@ The mileConvert is easy when I figured out the relationship between Controller a
 
 I added an action called MileConvert in HomeController and add a view for it.
 
-I don't think I should put the complet code in the portfolio, so I select some code and paste here.
+I don't think I should put the complete code in the portfolio, so I select some code and paste here.
 
 The C# Code for this action look like:
 
@@ -49,8 +48,14 @@ The C# Code for this action look like:
                 if (unit.Equals("centimeters"))
                 {
                     message = value + " miles is equal to " + value * 160934.4 + " centimeters";
-            ......
-            ......
+                }
+                if (unit.Equals("meters"))
+                {
+                    message = value + " miles is equal to " + value * 1609.344 + " meters";
+                }
+                if (unit.Equals("kilometers"))
+                {
+                    message = value + " miles is equal to " + value * 1.609344 + " kilometers";
                 }
                 ViewBag.message = message;
             }
@@ -58,6 +63,7 @@ The C# Code for this action look like:
 ```
 I have to say the ViewBag is convenient, it can pass many kinds of data from Controller to the View.
 And in the cshtml file, I can display the result by the use of Razor Code:
+
 ```
  @if (ViewBag.message != null)
    {
@@ -77,12 +83,27 @@ public ActionResult ColorMixer(string firstColor, string secondColor)
  
   [HttpPost]
  public ActionResult ColorMixerPost(string firstColor, string secondColor)
- {
-    Color _firstColor = ColorTranslator.FromHtml(firstColor);
-    ......
-    ViewBag.thirdItem = thirdColor;
+ { 
+   Color _firstColor = ColorTranslator.FromHtml(firstColor);
+   Color _secondColor = ColorTranslator.FromHtml(secondColor);
+   
+    int thirdColorR = _firstColor.R + _secondColor.R;
+    if (thirdColorR > 255) { thirdColorR = 255; }
+    int thirdColorG = _firstColor.G + _secondColor.G;
+    if (thirdColorG > 255) { thirdColorG = 212; }
+    int thirdColorB = _firstColor.B + _secondColor.B;
+    if (thirdColorB > 255) { thirdColorB = 255; }
 
-    return View("ColorMixer");
+    Color _thirdColor = Color.FromArgb(thirdColorR, thirdColorG, thirdColorB);
+    string thirdColor = "#" + _thirdColor.R.ToString("X2") + _thirdColor.G.ToString("X2") + _thirdColor.B.ToString("X2");
+            
+            ViewBag.firstItem = firstColor;
+            ViewBag.secondItem = secondColor;
+            ViewBag.plusItem = "+";
+            ViewBag.equalItem = "=";
+            ViewBag.thirdItem = thirdColor;
+
+            return View("ColorMixer");         
  }
 ```
 
@@ -108,20 +129,37 @@ The most difficult part for me is how to display the color as block, I add some 
 
 As the requirement, I complete the code of MileConvert in hw4-convert branch and complete the ColoeMixer code in another branch, then merge them to master.
 
+#### Test
 
-After debugging several times, the code works:
+After debugging several times, the code works well and the effect looks like the video shows:
 
-When run without input numbers:
+The main page:
 
-![RunWithoutNumber](Code/RunWithoutNumber.jpg)
+![mainPage](Code/mainPage.jpg)
 
-When run with input some characters:
+When run mile convert with empty value:
 
-![RunWithCharacter](Code/RunWithCharacter.jpg)
+![mileConvert-emptyValue](Code/mileConvert-emptyValue.jpg)
 
-When run with correct number:
+When run mile convert with unappropriate input:
 
-![RunSuccess](Code/RunSuccess.jpg)
+![mileConvert-wrongValue](Code/mileConvert-wrongValue.jpg)
+
+When run mile convert with correct input:
+
+![mileConvert](Code/mileConvert.jpg)
+
+When run color mixer with empty value:
+
+![colorMixer-emptyValue](Code/colorMixer-emptyValue.jpg)
+
+When run color mixer with unappropriate input:
+
+![colorMixer-wrongValue](Code/colorMixer-wrongValue.jpg)
+
+When run color mixer with correct input:
+
+![colorMixer](Code/colorMixer.jpg)
 
 
 
