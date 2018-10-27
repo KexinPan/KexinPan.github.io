@@ -102,28 +102,28 @@ Here are some screenshots:
 
 The main page:
 
-![mainPage](Code/mainPage.jpg)
+![mainPage](HW5/mainPage.jpg)
 
-When run mile convert with empty value:
+The original list:
 
-![mileConvert-emptyValue](Code/mileConvert-emptyValue.jpg)
+![originalList](HW5/OriginalList.jpg)
 
-When run mile convert with unappropriate input:
+Create new requests:
 
-![mileConvert-wrongValue](Code/mileConvert-wrongValue.jpg)
+![create new requests](HW5/CreateRequest.jpg)
 
-When run mile convert with correct input:
+Submit the request without input:
 
-![mileConvert](Code/mileConvert.jpg)
+![without input](HW5/WithoutInput.jpg)
 
-When run color mixer with empty value:
+Submit the request with incorrect input:
 
-![colorMixer-emptyValue](Code/colorMixer-emptyValue.jpg)
+![incorrct input](HW5/IncorrectInput.jpg)
 
-When run color mixer with unappropriate input:
+When complete the request, then redirect to a thanksPage:
 
-![colorMixer-wrongValue](Code/colorMixer-wrongValue.jpg)
+![thnksPage](HW5/ThanksPage.jpg)
 
-When run color mixer with correct input:
+See the new request in the list:
 
-![colorMixer](Code/colorMixer.jpg)
+![see new request](HW5/AddNewRequest.jpg)
