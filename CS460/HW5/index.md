@@ -94,7 +94,7 @@ Here are some part of code of Create View look like:
 
 ### Test
 
-First time, I made a video for the assignment. But the video is too large to put it in the repository. So I changed to add some screenshots to explain my project.
+At first, I made a video for the assignment. But the video is too large to put it in the repository. So I changed to add some screenshots to explain my project.
 
 Here are some screenshots:
 
