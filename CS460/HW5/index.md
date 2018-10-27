@@ -94,7 +94,11 @@ Here are some part of code of Create View look like:
 
 ### Test
 
-After debugging several times, the code works well and the effect looks like the video shows:
+I made some screenshots and a video for the assignment. I'm not sure the quality of the vedio, so I also add some screenshots to explain my project.
+
+Here is the video:
+
+Here are some screenshots:
 
 The main page:
 
