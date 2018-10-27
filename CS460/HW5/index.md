@@ -94,11 +94,7 @@ Here are some part of code of Create View look like:
 
 ### Test
 
-I made some screenshots and a video for the assignment. I'm not sure the quality of the vedio, so I also add some screenshots to explain my project.
-
-Here is the video(no sound, it's weird, I will fix it next time):
-
-![video](HW5/HW5.mp4)
+First time, I made a video for the assignment. But the video is too large to put it in the repository. So I changed to add some screenshots to explain my project.
 
 Here are some screenshots:
 
