@@ -98,11 +98,12 @@ I made some screenshots and a video for the assignment. I'm not sure the quality
 
 Here is the video:
 
+
 Here are some screenshots:
 
 The main page:
 
-![mainPage](HW5/mainPage.jpg)
+![mainPage](HW5/MainPage.jpg)
 
 The original list:
 
