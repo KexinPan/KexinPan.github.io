@@ -96,8 +96,9 @@ Here are some part of code of Create View look like:
 
 I made some screenshots and a video for the assignment. I'm not sure the quality of the vedio, so I also add some screenshots to explain my project.
 
-Here is the video:
+Here is the video(no sound, it's weird, I will fix it next time):
 
+![video](HW5/HW5.mp4)
 
 Here are some screenshots:
 
