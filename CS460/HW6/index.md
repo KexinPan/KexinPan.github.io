@@ -178,35 +178,26 @@ Here is the part of the code of View:
 
 ### Test
 
-At first, I made a video for the assignment. But the video is too large to put it in the repository. So I changed to add some screenshots to explain my project.
+Here is the video to show thw work:
 
-Here are some screenshots:
 
-The main page:
+Here are some screenshots to refine the protfolio(if the video is not clear enough):
 
-![mainPage](HW5/MainPage.jpg)
+Search without input:
 
-The original list:
+![withoutInput](withoutInput.jpg)
 
-![originalList](HW5/OriginalList.jpg)
+Search returns no result:
 
-Create new requests:
+![noMatch](noMatch.jpg)
 
-![create new requests](HW5/CreateRequest.jpg)
+Seach returns one or more results:
 
-Submit the request without input:
+![searchSuccess](searchSuccess.jpg)
 
-![without input](HW5/WithoutInput.jpg)
+The person is an employee:
 
-Submit the request with incorrect input:
+![anEmployee](anEmployee.jpg)
+The person is a customer:
 
-![incorrct input](HW5/IncorrectInput.jpg)
-
-When complete the request, then redirect to a thanksPage:
-
-![thnksPage](HW5/ThanksPage.jpg)
-
-See the new request in the list:
-
-![see new request](HW5/AddNewRequest.jpg)
-
+![aCustomer](aCustomer.jpg)
