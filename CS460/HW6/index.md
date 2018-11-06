@@ -180,6 +180,7 @@ Here is the part of the code of View:
 
 Here is the video to show thw work:
 
+* [Video](https://youtu.be/FxQ_sywFzzU)
 
 Here are some screenshots to refine the protfolio(if the video is not clear enough):
 
