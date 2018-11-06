@@ -16,6 +16,6 @@ All of the code in the CS460 class is in the following respository:
 3.[HW3](CS460/HW3/):C# console, translate app.
 4.[HW4](CS460/HW4/):MVC app 1, no dB.
 5.[HW5](CS460/HW5/):MVC app 2, simple dB.
-
+6.[HW6](CS460/HW6/):MVC app 3, pre-existing relational dB.
 
 
