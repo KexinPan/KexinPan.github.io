@@ -120,6 +120,36 @@ Here is the code of this part:
             database.Requests.Add(item);
             database.SaveChanges();
 ```
+### View
+Javascript is included by using @section in the view page.
+
+Here is the code of the view:
+```
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Internet Language Translator</h3>
+
+<form>
+    <div class="row">
+        <div class="col-md-6">
+            <input id="InputBox" name="Request" type="text" style="width:500px" class="input-sm" />
+        </div>
+        <div class="col-md-6">
+            <button class="btn btn-default" onclick="return clear()" type="submit">Clear</button>
+        </div>
+    </div>
+    
+</form>
+
+<div id="Image" class="row" />
+
+@section PageScripts
+    {
+    <script type="text/javascript" src="~/Scripts/TransLanguage.js"></script>
+}
+```
 
 ### Test
 
