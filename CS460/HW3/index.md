@@ -73,22 +73,22 @@ namespace Main
 
     class Program
     {
-        static LinkedList<string> generateBinaryRepresentationList(int n){
+        static LinkedList<string> GenerateBinaryRepresentationList(int n){
             LinkedQueue<StringBuilder> q =new LinkedQueue<StringBuilder>();
             LinkedList<String> output =new LinkedList<String>();
             if(n<1){
                 return output;
             }
-            q.push(new StringBuilder("1"));
+            q.Push(new StringBuilder("1"));
 
             while(n-- >0){
-                StringBuilder sb=q.pop();
+                StringBuilder sb=q.Pop();
                 output.AddLast(sb.ToString());
                 StringBuilder sbc =new StringBuilder(sb.ToString());
                 sb.Append('0');
-                q.push(sb);
+                q.Push(sb);
                 sbc.Append('1');
-                q.push(sbc);
+                q.Push(sbc);
 
             }
             return output;
@@ -99,7 +99,7 @@ namespace Main
             if(args.Length < 1)
         {
             Console.WriteLine("Please invoke with the max value to print binary up to, like this:");
-            Console.WriteLine("\tMain.exe 12");
+            Console.WriteLine("\tHW3.exe 12");
             return;
         }
         try 
@@ -111,7 +111,7 @@ namespace Main
            Console.WriteLine("I'm sorry, I can't understand the number: " + args[0]);
             return;
         }
-        LinkedList<String> output = generateBinaryRepresentationList(n);
+        LinkedList<String> output = GenerateBinaryRepresentationList(n);
         int maxLength = output.Last.Value.Length;
         foreach(String s in output)
         {
