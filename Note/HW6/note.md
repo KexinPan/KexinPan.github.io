@@ -35,6 +35,19 @@ General ideas:
 3. when click the name button, the button back with an id to another Detail action
 4. make a flag, if it has customer, continue more details
 
+First, I tried the dot notation in LINQPad:
+People.Where(p=>p.FullName.Contains("Lily")).Select(p=>p.FullName)
+The output is : Lily Code (DbQueryString)
+
+How to write this LINQ in C#, almost same, but if I want to use the table People, I need to use this table from database, so like in java, create an object (对象实例化): WorldWideContext db = new WorldWideContext();
+
+Then use db.People to run the LINQ in C#: 
+var name = db.People.Where(p => p.FullName.Contains(namePart)).Select(p => p.FullName);
+string personName = name.ToString();
+ViewBag.name = personName;
+
+
+
 
 
 
