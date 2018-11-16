@@ -46,6 +46,35 @@ var name = db.People.Where(p => p.FullName.Contains(namePart)).Select(p => p.Ful
 string personName = name.ToString();
 ViewBag.name = personName;
 
+I totally can not remember how I get the value that user input in View, then run it in Action. 
+Here is how I did it in the first time:
+```
+Request.QueryString["viewpagename"]; //please notice that here is [] not ()
+```
+The next part will chang to Chinese, write English is too slow and tired...
+
+此时输出是没有任何结果的，只有一个文本显示框和一个按钮还有下面一行乱码，也不是乱码，主要是并没有规定当输入值不为空时才进行查找，所以此时输入框为空但仍然进行了ViewBag.name的值的传递，以往的解决办法都是立个flag, true or false进行输出，比如这样：
+
+当没有输入任何值的时候，直接返回View，就是保持原样等待输入值
+```
+if (namePart == null)
+ {
+     ViewBag.name = false;
+     return View();
+}
+```
+当有值输入时再进行查找：
+```
+else
+{
+    ViewBag.name = true;
+    var name = db.People.Where(p => p.FullName.Contains(namePart)).Select(p => p.FullName);
+    return View(name.ToList()); //这里直接返回的是个list， 因为输入部分名字会返回多个值，所以这里不能用刚刚ViewBag.name的想法直接展示出来，等下在View中遍历一下输出值
+ }
+```
+此时在View中修改@modle HW6Redo.Models.Person 为 @model IEnumerable<HW6Redo.Models.Person> 可楞是要用到foreach的原因吧
+
+
 
 
 
