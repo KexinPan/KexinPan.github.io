@@ -42,7 +42,7 @@ The output is : Lily Code (DbQueryString)
 How to write this LINQ in C#, almost same, but if I want to use the table People, I need to use this table from database, so like in java, create an object (对象实例化): WorldWideContext db = new WorldWideContext();
 
 Then use db.People to run the LINQ in C#: 
-var name = db.People.Where(p => p.FullName.Contains(namePart)).Select(p => p.FullName);
+var name = db.People.Where(p => p.FullName.Contains(namePart)).Select(p => p.FullName);//这里是具体的找到并返回了FullName,其实可以直接返回Person对象，然后等下在View中可以获取到对应的ID以便于更多信息的展示，就是这样： People.Where(p=>p.FullName.Contains(namePart))
 string personName = name.ToString();
 ViewBag.name = personName;
 
@@ -69,10 +69,13 @@ else
 {
     ViewBag.name = true;
     var name = db.People.Where(p => p.FullName.Contains(namePart)).Select(p => p.FullName);
-    return View(name.ToList()); //这里直接返回的是个list， 因为输入部分名字会返回多个值，所以这里不能用刚刚ViewBag.name的想法直接展示出来，等下在View中遍历一下输出值
+    return View(name.ToList()); //这里直接返回的是个list， 因为输入部分名字会返回多个值，所以这里不能用刚刚ViewBag.name的想法直接展示出来，等下在View中遍历一下输出值,在view中输出值的时候就是 Model，比如想看传入的值是否为0， Modle.Count(), 可楞是因为你传入的是 Person类型吧
  }
 ```
 此时在View中修改@modle HW6Redo.Models.Person 为 @model IEnumerable<HW6Redo.Models.Person> 可楞是要用到foreach的原因吧
+
+
+
 
 
 
