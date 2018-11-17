@@ -103,6 +103,8 @@ foreach(var p in Model){}
         foreach (var p in Model)
         {
             <button type="button" href="Details/@p.PersonID">@p.FullName</button>
+            //来更正了，button里没有加链接的不好意思
+            //只能用这种方法使链接角色为button：<a href="Details/@p.PersonID" role="button">@p.FullName</a>
         }
 
     }
@@ -117,11 +119,38 @@ foreach(var p in Model){}
 
 那先写ViewModel:
 ```
+ public class Information
+    {
+        public Person Person { get; set; }
 
+        public Customer Customer { get; set; }
+
+        public List<InvoiceLine> InvoiceLine { get; set; }
+    }
 ```
+挺简单的，需要啥加进去啥就行了
 
+然后回到Action的编写：
+请注意传入id值时记得加?,因为有可能是空值（当然你编写正确了按理来说不可能有空值，有个名词叫严谨）
+就像这样： public ActionResult Details(int? id)
+接下来的步骤比第一次做的时候清晰多了，有了ViewModel,使用ViewModel add 一个 View， 然后在Action里面需要传入一样的类型，所以实例化一个ViewModel：
+```
+Information information = new Information();
+```
+之后的根据id找人啊之类的就用ViewModel来完成就好了， 这里的ViewModel是information
+information.Person=db.People.Find(id);
+最后传值到View时也是：return View(information);
 
+到这里想检验一下写的对不对，我在View里写了两个这个：
+@Html.Display(Model.Person.FullName)
+@Html.DisplayFor(m=>m.Person.FullName)
+因为我不懂他们有什么区别，想看运行下结果是不是一样，当我运行的时候果不其然我出错了，虽然目前没找出来，决定先写着Customer的代码找出原因了再回来补
+（好了我现在知道了，我不能运行Details的View,我要运行Search并传值进入Details，然后现在运行这两个第一个没有任何反应目前还是不知道什么我以为效果是一样的）
 
+接着回去写Customer2的信息，要求大概是
+Company Profile: Company;Phone;Fax;Website;Member Since
+Purchase History: Orers Total; Gross Sales; Gross Profit
+Item Purchased: List Top 10 of the profit item purchased: StockItemID; Description; 
 
 
 
