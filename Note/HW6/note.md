@@ -74,7 +74,45 @@ else
 ```
 此时在View中修改@modle HW6Redo.Models.Person 为 @model IEnumerable<HW6Redo.Models.Person> 可楞是要用到foreach的原因吧
 
+关于foreach的使用(个人理解如果在Razor里面则不需要再加@)：
+foreach(var p in Model){}
 
+关于本来限制输入值结果成了内容在里面的原因，请一定要在new前面加上“”用来表示object value为空，然后这样required才会成html value
+ @Html.TextBox("search", "",new {required = "required" })
+ 
+ 以上就可以显示搜索后的名字按钮了（真是不容易啊），使用给按钮加连接来跳转到另一个显示更多信息的页面，这里的按钮加的连接是hrf="ActionName/@p.PersonID".
+ 
+ 这一块具体代码如下：
+ ```
+ @model IEnumerable<HW6Redo.Models.Person>
+
+
+@using (Html.BeginForm("Search", "Home", FormMethod.Get))
+{
+
+        @Html.TextBox("search", "",new {required = "required" })
+        <button type="submit">Search</button>
+
+}
+
+@if (ViewBag.message)
+{
+
+    if (Model.Count() != 0)
+    {
+        foreach (var p in Model)
+        {
+            <button type="button" href="Details/@p.PersonID">@p.FullName</button>
+        }
+
+    }
+    else
+    {
+        <p>There is no person matches.</p>
+    }
+}
+ ```
+下面开始展示更多信息，先写Action: Details:
 
 
 
