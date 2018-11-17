@@ -113,7 +113,12 @@ foreach(var p in Model){}
 }
  ```
 下面开始展示更多信息，先写Action: Details:
+发现通过id获取到person object之后返回View,但是此时就开始迷用哪个model来设置View，因为这个View之后也要包含其他Model比如customer或者Order的内容，根据上一次的经验是要写一个ViewModel包含这些内容
 
+那先写ViewModel:
+```
+
+```
 
 
 
