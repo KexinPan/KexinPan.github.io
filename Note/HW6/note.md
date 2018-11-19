@@ -162,19 +162,85 @@ information.Person=db.People.Find(id);
 （好了我现在知道了，我不能运行Details的View,我要运行Search并传值进入Details，然后现在运行这两个第一个没有任何反应目前还是不知道什么我以为效果是一样的）
 
 此处关于老师的特殊要求：邮箱地址加入邮箱特殊链接：
+[有关的资料](https://www.reddit.com/r/csharp/comments/6282ww/htmldisplayfor_with_mailto/)
 ```
 @Html.Label("Email: ")
 
 <a href="mailto:no-one@snai1mai1.com?subject=free">@Html.DisplayFor(m => m.Person.EmailAddress)</a>
 ```
-
-接着回去写Customer2的信息，要求大概是
+或者按照第一次的写法更加简单，还可以变通成其他的格式：
+```
+<a href="mailto:@(Model.Person.EmailAddress)">@Html.DisplayFor(modelItem => modelItem.Person.EmailAddress)</a>
+```
+接着回去写Customer2的信息，要求大概是:
 Company Profile: Company;Phone;Fax;Website;Member Since
 Purchase History: Orers Total; Gross Sales; Gross Profit
 Item Purchased: List Top 10 of the profit item purchased: StockItemID; Description; 
 
+关于Company Profile里面的内容我觉得直接在View里面获取输出就可以了，比如我的想法是下面这样:
+在LINQPad里面：
+```
+People.Where(p=>p.PersonID==1001).Select(p=>p.Customers2)
+//运行出来的结果是一个ID为1001的Customer的HashSet
+```
+然后我觉得完美啊，就在View里面这样写：
+```
+@Html.Label("Company : ")
+
+@Html.DisplayFor(m => m.Person.Customers2.ToList().Select(c=>c.CustomerName))
+//我觉得相当nice啊，怎么看都没有什么错误吧
+//但是运行时依然报错，报的是啥我也没太看懂，大概就是这种样式不适合传递这样的参数
+```
+然后我只好翻了翻第一次成功时的做法：
+```
+//他先在Action里获得了CustomerID，然后用CustomerID去获得其他信息
+//我忽略一个问题，就是Customer的返回类型是HashSet，然后HashSet要像Array一样通过下标取值第几个才能获得相应内容
+int customerID = vm.Person.Customers2.First().CustomerID;
+vm.Customer = database.Customers.Find(customerID);//真特么聪明
+//在View里面
+@Html.DisplayFor(c=>c.Customer.CustomerName)
+//当写到网页的时候，老师要求以链接的形式展示出来，这个是真的没找到，但是按照上面第一次的写法变通一下就好了：
+<a href="@(Model.Customer.WebsiteURL)">@Html.DispalyFor(c=>c.Customer.CustomerName)</a>
+```
+对于获取Profit的时候我用了两个foreach循环，但由于InvoiceLines中没有Enumerable所以无法继续使用foreach，参考一眼第一次做的时候还是用的dot notation获取到的所有的结果,请注意在SelectMany里面是要用Lymta Function的：
+```
+ ViewBag.grossSale=information.Customer.Orders.SelectMany(i => i.Invoices).SelectMany(i => i.InvoiceLines).Sum(i => i.ExtendedPrice);
+ ViewBag.grossProfit = information.Customer.Orders.SelectMany(i => i.Invoices).SelectMany(i => i.InvoiceLines).Sum(i => i.LineProfit);
+```
+然后在View中使用ViewBag开始展示：
+```
+@Html.Label("Gross Sales : ")
+
+    <p>@ViewBag.grossSale</p>
+
+    @Html.Label("Gross Profit: ")
+
+    <p>@ViewBag.grossProfit</p>
+```
+
+最后一个要求展示以Profit TOP 10的订单：我的一开始的思维是在View中foreach循环每个Order,结果后来发现 stockItemID, description啥的都是在InvoiceLines里面的，这就给了我一个hint, 说明我们的information要返回的是invoiceLines(这让我不禁开始担忧如果我的数据库无法载入LINQPad该怎么办)
+在Action中使用 dot notation获取到InvoiceLines：
+```
+information.InvoiceLine = information.Customer.Orders.SelectMany(i => i.Invoices).SelectMany(i => i.InvoiceLines).OrderByDescending(i => i.LineProfit).Take(10).ToList();
+
+//一开始忘了加Tolist导致报错，看看报错原因到时候应该明白加上
+```
+然后在View里面：
+```
+ @foreach (var x in Model.InvoiceLine)
+    {
+        @Html.DisplayFor(i => x.StockItemID)
+        @Html.DisplayFor(i => x.Description)
+        @Html.DisplayFor(i => x.LineProfit)
+        @Html.DisplayFor(i => x.Person.FullName)
+    }
+```
+整个就算重新又做了一遍，虽然过程惨不忍睹，第一次该打但是没打的笔记都记下来了，遇到的问题也记下来了，最后关于照片的问题，你还没有放照片，这里有一个[网站](https://via.placeholder.com/150x200)，或者你也可以直接搜：photo placeholder，我觉得用一个img tag放个链接进去就得了，就像这样：
+```
+<div>
+        <img src="https://via.placeholder.com/150x200"/>
+    </div>
+```
 
 
-
-
-
+2
