@@ -36,16 +36,25 @@ General ideas:
 4. make a flag, if it has customer, continue more details
 
 First, I tried the dot notation in LINQPad:
+```
 People.Where(p=>p.FullName.Contains("Lily")).Select(p=>p.FullName)
 The output is : Lily Code (DbQueryString)
-
-How to write this LINQ in C#, almost same, but if I want to use the table People, I need to use this table from database, so like in java, create an object (对象实例化): WorldWideContext db = new WorldWideContext();
-
+```
+How to write this LINQ in C#, almost same, but if I want to use the table People, I need to use this table from database, so like in java, create an object (对象实例化): 
+```
+WorldWideContext db = new WorldWideContext();
+```
 Then use db.People to run the LINQ in C#: 
-var name = db.People.Where(p => p.FullName.Contains(namePart)).Select(p => p.FullName);//这里是具体的找到并返回了FullName,其实可以直接返回Person对象，然后等下在View中可以获取到对应的ID以便于更多信息的展示，就是这样： People.Where(p=>p.FullName.Contains(namePart))
+```
+var name = db.People.Where(p => p.FullName.Contains(namePart)).Select(p => p.FullName);
+```
+//这里是具体的找到并返回了FullName,其实可以直接返回Person对象，然后等下在View中可以获取到对应的ID以便于更多信息的展示，就是这样： 
+
+```
+People.Where(p=>p.FullName.Contains(namePart))
 string personName = name.ToString();
 ViewBag.name = personName;
-
+```
 I totally can not remember how I get the value that user input in View, then run it in Action. 
 Here is how I did it in the first time:
 ```
@@ -75,10 +84,13 @@ else
 此时在View中修改@modle HW6Redo.Models.Person 为 @model IEnumerable<HW6Redo.Models.Person> 可楞是要用到foreach的原因吧
 
 关于foreach的使用(个人理解如果在Razor里面则不需要再加@)：
+```
 foreach(var p in Model){}
-
+```
 关于本来限制输入值结果成了内容在里面的原因，请一定要在new前面加上“”用来表示object value为空，然后这样required才会成html value
+```
  @Html.TextBox("search", "",new {required = "required" })
+```
  
  以上就可以显示搜索后的名字按钮了（真是不容易啊），使用给按钮加连接来跳转到另一个显示更多信息的页面，这里的按钮加的连接是hrf="ActionName/@p.PersonID".
  
@@ -138,7 +150,9 @@ foreach(var p in Model){}
 Information information = new Information();
 ```
 之后的根据id找人啊之类的就用ViewModel来完成就好了， 这里的ViewModel是information
+```
 information.Person=db.People.Find(id);
+```
 最后传值到View时也是：return View(information);
 
 到这里想检验一下写的对不对，我在View里写了两个这个：
@@ -146,6 +160,13 @@ information.Person=db.People.Find(id);
 @Html.DisplayFor(m=>m.Person.FullName)
 因为我不懂他们有什么区别，想看运行下结果是不是一样，当我运行的时候果不其然我出错了，虽然目前没找出来，决定先写着Customer的代码找出原因了再回来补
 （好了我现在知道了，我不能运行Details的View,我要运行Search并传值进入Details，然后现在运行这两个第一个没有任何反应目前还是不知道什么我以为效果是一样的）
+
+此处关于老师的特殊要求：邮箱地址加入邮箱特殊链接：
+```
+@Html.Label("Email: ")
+
+<a href="mailto:no-one@snai1mai1.com?subject=free">@Html.DisplayFor(m => m.Person.EmailAddress)</a>
+```
 
 接着回去写Customer2的信息，要求大概是
 Company Profile: Company;Phone;Fax;Website;Member Since
