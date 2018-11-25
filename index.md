@@ -21,5 +21,5 @@ All of the code in the CS460 class is in the following respository:
 
 ### Software Engineering I: Note
 
-6.[Note](Note/HW6/):MVC app 3, pre-existing relational dB.
+6.[Note](Note/HW6/note.md):MVC app 3, pre-existing relational dB.
 
