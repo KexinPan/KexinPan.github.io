@@ -1,5 +1,6 @@
 ## HW8 Note
 
+### (Model 是不用自己创建的，因为这里要求的是Code first with database，但是错误是难免的，可以从第二步开始看)
 ### Coding, cretae Model for the four tables
 
 要求里有四个表格，所以我打算建立四个Model,一切都很顺利，并没有太大的困难，但当我新建Controller with views and model 的时候发生错误，所以我觉得借鉴下别人已完成的意见，果然发生了一点小问题。
@@ -64,3 +65,7 @@ CREATE TABLE [dbo].[Items]
 	CONSTRAINT [FK_dbo.Sellers] FOREIGN KEY ([SellerName]) REFERENCES [dbo].[Sellers] ([SellerName]),
 );
 ```
+关于code with database first，先建立一个database, 然后写好UP 和DOWN的script， 然后Model右键添加New Item来自动生成Modle和Context
+
+### 建立有关Item的create, delete, index, edit
+这时候跟HW5 很像了，如果scafoding时报错的话可以先build一下然后就确实不报错了（好神奇..）
