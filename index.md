@@ -19,6 +19,7 @@ All of the code in the CS460 class is in the following respository:
 6.[HW6](CS460/HW6/):MVC app 3, pre-existing relational dB.
 7.[HW7](CS460/HW7/):MVC app 4, AJAX single page app.
 8.[HW8](CS460/HW8/):MVC app 5, diy multi-table/relational dB.
+9.[HW9](CS460/HW9/):MVC app 6, Cloud deployment.
 
 ### Software Engineering I: Note
 
