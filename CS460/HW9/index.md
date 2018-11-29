@@ -6,6 +6,7 @@ For this task, we're going to deploy the MVC web application built in HW8 to the
 
 * [Assignment Page](http://www.wou.edu/~morses/classes/cs46x/assignments/HW9_1819.html)
 * [Code Repository](https://github.com/KexinPan/CS460/tree/master/HW9)
+* [Azure App Link](https://cs460hw9.azurewebsites.net)
 * https://github.com/KexinPan/CS460.git
 
 ## Steps
