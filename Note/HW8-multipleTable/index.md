@@ -69,3 +69,7 @@ CREATE TABLE [dbo].[Items]
 
 #### 建立有关Item的create, delete, index, edit
 这时候跟HW5 很像了，如果scafoding时报错的话可以先build一下然后就确实不报错了（好神奇..）
+
+#### 关于按照价钱排序时出现的只比较大小不比较位数的问题
+这里有个不错的[链接](https://stackoverflow.com/questions/30159978/order-by-sort-wrong-records/30159990)
+注意将price转换为INT类型
