@@ -23,5 +23,6 @@ All of the code in the CS460 class is in the following respository:
 
 ### Software Engineering I: Note
 
-6.[Note](Note/HW6/note.md):MVC app 3, pre-existing relational dB.
-
+6.[HW6 Note](Note/HW6/note.md):MVC app 3, pre-existing relational dB.
+8.[HW8 Note](Note/HW8-multipleTable/index.md): Complex ajax app
+9.[HW9 Note](Note/HW9/index.md): Deploy to Azure
