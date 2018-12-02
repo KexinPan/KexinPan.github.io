@@ -73,3 +73,6 @@ CREATE TABLE [dbo].[Items]
 #### 关于按照价钱排序时出现的只比较大小不比较位数的问题
 这里有个不错的[链接](https://stackoverflow.com/questions/30159978/order-by-sort-wrong-records/30159990)
 注意将price转换为INT类型
+
+#### 关于怕你懵逼一脸的ER diagram的关系：
+[ER diagram](https://www.smartdraw.com/entity-relationship-diagram/#ERDSymbols)
