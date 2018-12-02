@@ -76,3 +76,18 @@ CREATE TABLE [dbo].[Items]
 
 #### 关于怕你懵逼一脸的ER diagram的关系：
 [ER diagram](https://www.smartdraw.com/entity-relationship-diagram/#ERDSymbols)
+
+#### 在创建Bids表格时，由于有多个外键外间不能重名，所以这里是这样创建的：
+```
+CREATE TABLE [dbo].[Bids]
+(
+	[BidID]		INT IDENTITY (1,1)	NOT NULL,
+	[ItemID]	INT(1,1)	NOT NULL,
+	[BuyerName]	NVARCHAR(64)		NOT NULL,
+	[Price]		INT	NOT NULL,
+	[DateValue]		DATETIME(64)		NOT NULL,
+	CONSTRAINT [PK_dbo.Bids] PRIMARY KEY CLUSTERED ([BidID]),
+	CONSTRAINT [FK_dbo.Bids] FOREIGN KEY ([BuyerName]) REFERENCES [dbo].[Buyers] ([BuyerName]),
+	CONSTRAINT [FK2_dbo.Bids] FOREIGN KEY ([ItemID]) REFERENCES [dbo].[Items] ([ItemID])
+);
+```
