@@ -82,12 +82,12 @@ CREATE TABLE [dbo].[Items]
 CREATE TABLE [dbo].[Bids]
 (
 	[BidID]		INT IDENTITY (1,1)	NOT NULL,
-	[ItemID]	INT(1,1)	NOT NULL,
+	[ItemID]	INT	NOT NULL,            //ID 除了主键外格式不可以是（1，1）
 	[BuyerName]	NVARCHAR(64)		NOT NULL,
 	[Price]		INT	NOT NULL,
-	[DateValue]		DATETIME(64)		NOT NULL,
+	[DateValue]		DATETIME		NOT NULL,     //日期不可以有字节限制
 	CONSTRAINT [PK_dbo.Bids] PRIMARY KEY CLUSTERED ([BidID]),
 	CONSTRAINT [FK_dbo.Bids] FOREIGN KEY ([BuyerName]) REFERENCES [dbo].[Buyers] ([BuyerName]),
-	CONSTRAINT [FK2_dbo.Bids] FOREIGN KEY ([ItemID]) REFERENCES [dbo].[Items] ([ItemID])
+	CONSTRAINT [FK2_dbo.Bids] FOREIGN KEY ([ItemID]) REFERENCES [dbo].[Items] ([ItemID])  //第二个外键注意改名字
 );
 ```
