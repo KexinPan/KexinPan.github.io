@@ -12,3 +12,4 @@ The summary of the process looks like:
 7. get the coonection string from Azure, then replace the local one in Web.config by this one, when you push them to repo, please replace them in some others
 8. create an App on Azure: app services-> web app
 9. in application setting, add a connetion string: choose sql server,name is the context name and value is the connect string in Wen.config
+10. Deploy the app to Azure: Build-> Publish->app aervices->select existing->publish->choose one and ok
