@@ -91,3 +91,9 @@ CREATE TABLE [dbo].[Bids]
 	CONSTRAINT [FK2_dbo.Bids] FOREIGN KEY ([ItemID]) REFERENCES [dbo].[Items] ([ItemID])  //第二个外键注意改名字
 );
 ```
+#### 关于在cshtml中渲染脚本的时候
+```
+@section scripts{
+    <script type="text/javascript" src="~/Scripts/ajax.js"></script>
+}
+```
